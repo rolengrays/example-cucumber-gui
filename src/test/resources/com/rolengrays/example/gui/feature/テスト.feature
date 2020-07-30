@@ -1,5 +1,5 @@
 #language: ja
-機能: ログイン
+機能: Google検索
 
   シナリオテンプレート: 検索
   もし Googleを開く
