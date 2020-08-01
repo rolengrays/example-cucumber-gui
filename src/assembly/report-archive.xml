@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
+    <id>reports</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <includeSiteDirectory>true</includeSiteDirectory>
+    <fileSets>
+        <fileSet>
+            <outputDirectory>surefire-reports</outputDirectory>
+            <directory>target/surefire-reports</directory>
+        </fileSet>
+        <fileSet>
+            <outputDirectory>cucumber-reports</outputDirectory>
+            <directory>target/cucumber-reports</directory>
+        </fileSet>
+    </fileSets>
+</assembly>

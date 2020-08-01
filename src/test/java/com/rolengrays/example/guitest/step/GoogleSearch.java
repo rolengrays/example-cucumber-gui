@@ -1,9 +1,8 @@
-package com.rolengrays.example.gui.stepdef;
+package com.rolengrays.example.guitest.step;
 
-import com.codeborne.selenide.Selenide;
-import com.rolengrays.example.gui.page.GoogleSearchPage;
-import com.rolengrays.example.gui.ScenarioContext;
-import com.rolengrays.example.gui.page.GoogleResultPage;
+import com.rolengrays.example.guitest.page.GoogleSearchPage;
+import com.rolengrays.example.guitest.ScenarioContext;
+import com.rolengrays.example.guitest.page.GoogleResultPage;
 import io.cucumber.java.ja.かつ;
 import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
@@ -20,7 +19,7 @@ public class GoogleSearch {
 
     @もし("Googleを開く")
     public void openBrowser() {
-        context.googleSearchPage = Selenide.open("https://www.google.com/", GoogleSearchPage.class);
+        context.googleSearchPage = open("https://www.google.com/", GoogleSearchPage.class);
     }
 
     @かつ("{string}を入力して検索する")

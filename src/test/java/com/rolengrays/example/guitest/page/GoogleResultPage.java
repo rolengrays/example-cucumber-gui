@@ -1,4 +1,4 @@
-package com.rolengrays.example.gui.page;
+package com.rolengrays.example.guitest.page;
 
 import com.codeborne.selenide.ElementsCollection;
 import static com.codeborne.selenide.Selenide.$$;
