@@ -2,3 +2,4 @@ report-archives/
 target/
 .idea/
 *.iml
+debug.log

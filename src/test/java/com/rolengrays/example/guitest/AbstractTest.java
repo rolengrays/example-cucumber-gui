@@ -34,7 +34,6 @@ abstract public class AbstractTest {
   private static Properties getPropertiesFromFile(String filename) {
     String propertiesFilePath = FileSystems.getDefault().getPath(PROPERTIES_FOLDER, filename).toString();
     try (InputStream is = AbstractTest.class.getResourceAsStream(propertiesFilePath)) {
-      Objects.requireNonNull(is);
       Properties prop = new Properties();
       prop.load(is);
       logger.info(String.format("プロパティファイル'%s'の読み込みに成功しました。", filename));
