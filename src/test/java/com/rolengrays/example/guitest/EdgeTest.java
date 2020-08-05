@@ -19,7 +19,7 @@ public class EdgeTest extends AbstractTest {
   @BeforeClass
   public static void beforeTest() {
     Configuration.browser = Browsers.EDGE;
-    addSystemPropertiesFromFile(WEBDRIVERMANAGER_PROPERTIES);
+    addSystemPropertiesFromFile(WDM_PROPERTIES);
     loadSelenideConfigFromFile(Browsers.EDGE + ".properties");
     logger.info(String.format("%sでテストを開始します。", Browsers.EDGE));
   }

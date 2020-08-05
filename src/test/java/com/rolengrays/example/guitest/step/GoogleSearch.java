@@ -8,15 +8,14 @@ import io.cucumber.java.ja.ならば;
 import io.cucumber.java.ja.もし;
 import io.cucumber.java.ja.前提;
 
-import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.CollectionCondition.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GoogleSearch {
-  private final ScenarioContext context;
+public class GoogleSearch extends AbstractStep {
 
   public GoogleSearch(ScenarioContext context) {
-    this.context = context;
+    super(context);
   }
 
   @前提("Google検索ページを開く")
@@ -30,8 +29,11 @@ public class GoogleSearch {
   }
 
   @かつ("Google検索結果が表示される")
-  public void getResult() {
+  public void getResult() throws InterruptedException {
     context.googleResultPage = page(GoogleResultPage.class);
+    // 検索結果リストが存在する（サイズが1以上）ことを確認する。確認できるまでorタイムアウト経過まで待機する。
+    context.googleResultPage.getResults().shouldBe(sizeGreaterThanOrEqual(1));
+    // 検索結果リストのテキスト部分を抽出し、ほかのステップから参照できるようにする。
     context.googleResults = context.googleResultPage.getResults().texts();
   }
 

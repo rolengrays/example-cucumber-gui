@@ -15,7 +15,7 @@ import java.util.Properties;
 abstract public class AbstractTest {
   protected final static Logger logger;
   private final static String PROPERTIES_FOLDER = "properties";
-  protected final static String WEBDRIVERMANAGER_PROPERTIES = "webdrivermanager.properties";
+  protected final static String WDM_PROPERTIES = "wdm.properties";
 
   static {
     logger = Logger.getLogger(AbstractTest.class.toString());
@@ -23,7 +23,7 @@ abstract public class AbstractTest {
 
   protected static void addSystemPropertiesFromFile(String filename) {
     Properties prop = Objects.requireNonNull(getPropertiesFromFile(filename));
-    prop.forEach((key,value) -> System.setProperty((String)key,(String)value));
+    prop.forEach((key, value) -> System.setProperty((String) key, (String) value));
   }
 
   protected static void loadSelenideConfigFromFile(String filename) {
@@ -51,7 +51,7 @@ abstract public class AbstractTest {
     Configuration.timeout = Long.parseLong(prop.getProperty("selenide.timeout"));
     Configuration.pollingInterval = Long.parseLong(prop.getProperty("selenide.pollingInterval"));
     Configuration.holdBrowserOpen = Boolean.parseBoolean(prop.getProperty("selenide.holdBrowserOpen"));
-    Configuration.reopenBrowserOnFail=Boolean.parseBoolean(prop.getProperty("selenide.reopenBrowserOnFail"));
+    Configuration.reopenBrowserOnFail = Boolean.parseBoolean(prop.getProperty("selenide.reopenBrowserOnFail"));
     Configuration.browserSize = prop.getProperty("selenide.browserSize");
     Configuration.browserPosition = prop.getProperty("selenide.browserPosition");
     Configuration.startMaximized = Boolean.parseBoolean(prop.getProperty("selenide.startMaximized"));

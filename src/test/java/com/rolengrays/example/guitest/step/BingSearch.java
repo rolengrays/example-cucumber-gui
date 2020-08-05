@@ -1,5 +1,6 @@
 package com.rolengrays.example.guitest.step;
 
+import com.codeborne.selenide.CollectionCondition;
 import com.rolengrays.example.guitest.ScenarioContext;
 import com.rolengrays.example.guitest.page.BingResultPage;
 import com.rolengrays.example.guitest.page.BingSearchPage;
@@ -9,12 +10,12 @@ import io.cucumber.java.ja.もし;
 import io.cucumber.java.ja.前提;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.CollectionCondition.*;
 
-public class BingSearch {
-  private final ScenarioContext context;
+public class BingSearch extends AbstractStep {
 
   public BingSearch(ScenarioContext context) {
-    this.context = context;
+    super(context);
   }
 
   @前提("Bing検索ページを開く")
@@ -30,7 +31,7 @@ public class BingSearch {
   @かつ("Bing検索結果が表示される")
   public void getResult() {
     context.bingResultPage = page(BingResultPage.class);
-    // getResultsだけではなく、クエリ結果をここで格納する必要あり。getResultsはクエリしないため。
+    context.bingResultPage.getResults().shouldBe(sizeGreaterThanOrEqual(1));
     context.bingResults = context.bingResultPage.getResults().texts();
   }
 }

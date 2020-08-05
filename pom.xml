@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.rolengrays</groupId>
-    <artifactId>example-cucumber-gui</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>example-cucumber-selenide</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
-    <url>https://github.com/rolengrays/example-cucumber-gui</url>
+    <url>https://github.com/rolengrays/example-cucumber-selenide</url>
 
     <properties>
         <jdk.version>14</jdk.version>
@@ -104,7 +104,7 @@
                         </goals>
                         <configuration>
                             <name>build.time</name>
-                            <pattern>yyyy-MM-dd_hh-mm-ss</pattern>
+                            <pattern>yyyy-MM-dd_HH-mm-ss</pattern>
                             <locale>ja_JP</locale>
                             <timeZone>Asia/Tokyo</timeZone>
                         </configuration>

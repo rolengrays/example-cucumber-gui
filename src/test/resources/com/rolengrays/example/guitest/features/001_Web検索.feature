@@ -24,4 +24,4 @@
 
     サンプル:
     | word |
-    | "cucumber" |
+    | "youtube" |

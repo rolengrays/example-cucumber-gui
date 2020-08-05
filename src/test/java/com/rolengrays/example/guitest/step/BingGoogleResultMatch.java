@@ -5,11 +5,10 @@ import io.cucumber.java.ja.ならば;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class BingGoogleResultMatch {
-  private final ScenarioContext context;
+public class BingGoogleResultMatch extends AbstractStep {
 
   public BingGoogleResultMatch(ScenarioContext context) {
-    this.context = context;
+    super(context);
   }
 
   @ならば("GoogleとBingの検索結果トップが一致する")

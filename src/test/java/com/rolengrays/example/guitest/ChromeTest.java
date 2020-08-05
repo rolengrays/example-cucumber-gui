@@ -19,7 +19,7 @@ public class ChromeTest extends AbstractTest {
   @BeforeClass
   public static void beforeTest() {
     Configuration.browser = Browsers.CHROME;
-    addSystemPropertiesFromFile(WEBDRIVERMANAGER_PROPERTIES);
+    addSystemPropertiesFromFile(WDM_PROPERTIES);
     loadSelenideConfigFromFile(Browsers.CHROME + ".properties");
     logger.info(String.format("%sでテストを開始します。", Browsers.CHROME));
   }

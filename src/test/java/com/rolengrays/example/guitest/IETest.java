@@ -16,11 +16,17 @@ import org.junit.runner.RunWith;
         glue = {"com.rolengrays.example.guitest.step", "com.rolengrays.example.guitest.hook"}
 )
 public class IETest extends AbstractTest {
+  private static final String IE_WDM_PROPERTIES = "ie.wdm.properties";
+
   @BeforeClass
   public static void beforeTest() {
     Configuration.browser = Browsers.IE;
-    addSystemPropertiesFromFile(WEBDRIVERMANAGER_PROPERTIES);
+    addSystemPropertiesFromFile(WDM_PROPERTIES);
+    // IEのみ、追加のWebDriverManager設定をロードする
+    addSystemPropertiesFromFile(IE_WDM_PROPERTIES);
     loadSelenideConfigFromFile(Browsers.IE + ".properties");
+
+
     logger.info(String.format("%sでテストを開始します。", Browsers.IE));
   }
 }
